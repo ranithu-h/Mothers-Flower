@@ -68,7 +68,6 @@
 
             .image-row {
                 position: absolute;
-                left: 50%;
                 transform: translateX(-50%);
                 display: flex;
                 gap: 30px;
@@ -77,16 +76,19 @@
             }
 
             .top-row {
+                left: 52%;
                 top: 10%; /* Adjust as needed */
             }
 
             .bottom-row {
+                left: 50%;
                 bottom: 8%; /* Adjust as needed */
             }
 
             .fly-in-img {
                 height: auto;
-                max-height: 220px;
+                border-radius: 16px;
+                max-height: 270px;
                 width: auto;
                 opacity: 0;
                 transform: translateX(-120vw); /* Offscreen start */
@@ -100,11 +102,11 @@
 
             button {
                 margin-top: 30px;
-                padding: 16px 34px;
-                font-size: 20px;
+                padding: 24px 48px;
+                font-size: 75px;
                 background: #ff709c;
                 border: none;
-                border-radius: 10px;
+                border-radius: 14px;
                 color: white;
                 cursor: pointer;
                 box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -140,13 +142,13 @@
 
             .music-toggle {
                 position: fixed;
-                top: 20px;
-                right: 20px;
-                font-size: 36px;
+                top: 16px;
+                right: 16px;
+                font-size: 52px;
                 background: #ff709c;
                 color: white;
-                padding: 18px 24px;
-                border-radius: 50px;
+                padding: 30px 34px;
+                border-radius: 60px;
                 cursor: pointer;
                 box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
                 z-index: 999;
@@ -193,20 +195,27 @@
                 top: 50%;
                 left: -100vw; /* Start way off-screen to the left */
                 transform: translateY(-50%);
-                width: 80vw;
+                width: 100vw;
                 max-width: 700px;
-                padding: 30px;
+                padding: 40px 26px;
                 background: rgba(255, 240, 245, 0.8);
                 background: rgba(255, 240, 245, 0.8);
                 color: #a90037;
                 font-family: 'Segoe UI', sans-serif;
-                font-size: 22px;
-                line-height: 1.6;
+                font-size: 28px;
+                line-height: 2.0;
                 border-radius: 15px;
                 box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
                 z-index: 1100;
                 opacity: 0;
                 transition: transform 2s ease, opacity 1.8s ease;
+            }
+
+            @media (max-width: 420px) {
+                .final-message {
+                    font-size: 22px;
+                    padding: 28px 18px;
+                }
             }
 
             .final-message.show {
