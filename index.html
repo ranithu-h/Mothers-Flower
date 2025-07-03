@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8" />
+        <link rel="icon" href="ico.ico"/>
         <title>Moms Flower</title>
         <style>
             body {
@@ -224,7 +224,35 @@
                 opacity: 1;
             }
 
+            .top-flyin-message {
+                position: fixed;
+                top: 12px;
+                right: 100vw;
+                background: linear-gradient(45deg, #ff2d77, #ff7dbf);
+                color: #fffafc;
+                padding: 50px 100px;
+                font-size: 55px;
+                font-weight: 1000;
+                font-family: 'Segoe UI', sans-serif;
+                border-radius: 80px;
+                box-shadow: 0 12px 60px rgba(0, 0, 0, 0.45);
+                opacity: 0;
+                z-index: 1300;
+                transition: right 1.6s ease-out, opacity 1.6s ease-out;
+                white-space: nowrap;
+            }
 
+            .top-flyin-message.show {
+                right: 200px;
+                opacity: 1;
+                animation: megaPop 0.9s ease;
+            }
+
+            @keyframes megaPop {
+                0%   { transform: scale(0.5); opacity: 0; }
+                80%  { transform: scale(1.15); opacity: 1; }
+                100% { transform: scale(1); }
+            }
 
         </style>
     </head>
@@ -271,6 +299,8 @@
 
         <button onclick="bloom()">Press this button</button>
         <div class="music-toggle" onclick="toggleMusic()">🎵</div>
+        <div id="birthdayTop" class="top-flyin-message">Happy Birthday Ammi 🎂</div>
+
 
         <audio id="bg-music" src="moms_theme.mp3" loop></audio>
 
@@ -362,7 +392,14 @@
                 // Show final image in center after hearts are done
                 setTimeout(() => {
                     document.getElementById('finalMessage').classList.add('show');
-                }, 9500); // adjust timing if needed
+
+                    // Show top right birthday message after 2s
+                    setTimeout(() => {
+                        document.getElementById('birthdayTop').classList.add('show');
+                    }, 2000);
+
+                    }, 9500); // After hearts
+
             }
 
 
