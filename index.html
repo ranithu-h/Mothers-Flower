@@ -188,22 +188,33 @@
                 }
             }
 
-            .final-img {
+            .final-message {
                 position: fixed;
                 top: 50%;
-                left: 50%;
-                transform: translate(-150vw, -50%) scale(0.9);
-                opacity: 50;
-                max-width: 300px;
-                max-height: 300px;
-                transition: transform 2s ease, opacity 2s ease;
-                z-index: 1001; /* above the hearts */
+                left: -100vw; /* Start way off-screen to the left */
+                transform: translateY(-50%);
+                width: 80vw;
+                max-width: 700px;
+                padding: 30px;
+                background: rgba(255, 240, 245, 0.8);
+                background: rgba(255, 240, 245, 0.8);
+                color: #a90037;
+                font-family: 'Segoe UI', sans-serif;
+                font-size: 22px;
+                line-height: 1.6;
+                border-radius: 15px;
+                box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+                z-index: 1100;
+                opacity: 0;
+                transition: transform 2s ease, opacity 1.8s ease;
             }
 
-            .final-img.show {
+            .final-message.show {
+                left: 50%;
+                transform: translate(-50%, -50%);
                 opacity: 1;
-                transform: translate(-50%, -50%) scale(1);
             }
+
 
 
         </style>
@@ -235,7 +246,19 @@
             <img src="image6.jpg" class="fly-in-img" />
         </div>
 
-        <img src="final-image.jpg" id="finalImage" class="final-img" />
+        <div class="final-message" id="finalMessage">
+            Ammi ❤️, You’ve done so much for us — all the hard work, all the things you gave up just to keep us happy 😊  
+            Even when you were tired, you always put us first 💗  
+            <br><br>
+            I know I don’t say it enough, but I see it. I feel it 💓. I’ll never forget it.  
+            <br><br>
+            You love us more than anything… and I want you to know:  
+            I love you more than I can explain ❤️‍🔥  
+            <br><br>
+            Thank you for being the strongest, kindest, most loving person in my life 🫶🌹  
+            <br><br>
+            <strong>Happy Birthday Ammi 🎂🎉💐</strong>
+        </div>
 
         <button onclick="bloom()">Press this button</button>
         <div class="music-toggle" onclick="toggleMusic()">🎵</div>
@@ -244,7 +267,6 @@
 
         <script>
             let isPlaying = true;
-
 
             function bloom() {
                 document.getElementById('bg-music').play();
@@ -330,7 +352,7 @@
 
                 // Show final image in center after hearts are done
                 setTimeout(() => {
-                    document.getElementById('finalImage').classList.add('show');
+                    document.getElementById('finalMessage').classList.add('show');
                 }, 9500); // adjust timing if needed
             }
 
@@ -352,6 +374,7 @@
             document.querySelectorAll('.petal').forEach(petal => {
                 petal.style.animationPlayState = 'paused';
             });
+
         </script>
     </body>
 </html>
