@@ -32,17 +32,18 @@
                 transform-origin: bottom center;
                 transform: rotate(var(--angle)) scale(0.2);
                 opacity: 0;
-                animation: bloom 1.5s ease-out forwards;
+                animation: bloom 3s ease-out forwards;
                 pointer-events: none;
             }
 
             .petal:nth-child(1) { --angle: 0deg; animation-delay: 0s; }
-            .petal:nth-child(2) { --angle: 51.4deg; animation-delay: 0.3s; }
-            .petal:nth-child(3) { --angle: 102.8deg; animation-delay: 0.6s; }
-            .petal:nth-child(4) { --angle: 154.2deg; animation-delay: 0.9s; }
-            .petal:nth-child(5) { --angle: 205.6deg; animation-delay: 1.2s; }
-            .petal:nth-child(6) { --angle: 257deg; animation-delay: 1.5s; }
-            .petal:nth-child(7) { --angle: 308.4deg; animation-delay: 1.8s; }
+            .petal:nth-child(2) { --angle: 51.4deg; animation-delay: 0.6s; }
+            .petal:nth-child(3) { --angle: 102.8deg; animation-delay: 1.2s; }
+            .petal:nth-child(4) { --angle: 154.2deg; animation-delay: 1.8s; }
+            .petal:nth-child(5) { --angle: 205.6deg; animation-delay: 2.4s; }
+            .petal:nth-child(6) { --angle: 257deg; animation-delay: 3s; }
+            .petal:nth-child(7) { --angle: 308.4deg; animation-delay: 3.6s; }
+
 
             @keyframes bloom {
                 to {
@@ -92,7 +93,7 @@
                 width: auto;
                 opacity: 0;
                 transform: translateX(-120vw); /* Offscreen start */
-                transition: transform 1.8s ease, opacity 1.8s ease;
+                transition: transform 3.5s ease, opacity 3.5s ease;
             }
 
             .fly-in-img.show {
@@ -324,12 +325,12 @@
                     const message = "Ammi ❤️❤️ Happy  Birthday ";
                     createTextRing(message);
 
-                    const totalDelay = message.length * 100 + 800; 
+                    const totalDelay = message.length * 150 + 1200; 
                     setTimeout(() => {
                         document.getElementById('textCircle').style.opacity = '0';
                         showImages();
                     }, totalDelay);
-                }, 2000);
+                }, 4000);
             }
 
 
@@ -354,7 +355,7 @@
 
                     setTimeout(() => {
                         span.style.opacity = 1;
-                    }, i * 100);
+                    }, i * 250);
                 });
 
                 container.style.opacity = '1';
@@ -368,9 +369,9 @@
                     setTimeout(() => {
                         img.classList.add('show');
                         if (index === images.length - 1) {
-                            setTimeout(() => startHearts(), 1000);
+                            setTimeout(() => startHearts(), 2000);
                         }
-                    }, 1000 + index * 500); // Stagger the appearance
+                    }, 2000 + index * 1000); // Stagger the appearance
                 });
             }
 
@@ -396,9 +397,9 @@
                     // Show top right birthday message after 2s
                     setTimeout(() => {
                         document.getElementById('birthdayTop').classList.add('show');
-                    }, 2000);
+                    }, 3000);
 
-                    }, 9500); // After hearts
+                    }, 12000); // After hearts
 
             }
 
